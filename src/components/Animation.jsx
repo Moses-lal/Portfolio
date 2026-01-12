@@ -66,7 +66,6 @@ export default function BouncingAvatar() {
             
             {/* Hi There */}
             <span className="font-medium">Hi there!</span>
-            <hr className="w-6 ml-20 border-2 border-[#008080]" />
           
 
             {/*Looping Words Added Here */}
@@ -76,9 +75,9 @@ export default function BouncingAvatar() {
                   words={[
                     "Full Stack MERN Developer",
                     "clean and fast code",
-                    "believe unique ideas result in creative designs",
-                    "eager to solve real-world problems",
-                    "lets build something amazing together!",
+                    "unique ideas with creative design",
+                    "Practical problem solver",
+                    "lets build something together!",
                   ]}
                   loop
                   cursor
@@ -92,6 +91,8 @@ export default function BouncingAvatar() {
 
             <br />
            
+            <hr className="w-6 ml-20 border-2 border-[#008080]" />
+
 
             I Make The <span className="text-[#008080]">Complex</span> Simple
             <br />
