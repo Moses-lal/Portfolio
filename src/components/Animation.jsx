@@ -93,7 +93,7 @@ export default function BouncingAvatar() {
 
             <br />
            
-            <hr className="w-6 mx-auto border-2 border-[#008080] mb-1" />
+            <hr className="w-6 mx-auto border-2 border-[#008080] mb-2" />
 
 
             I Make The <span className="text-[#008080]">Complex</span> Simple
