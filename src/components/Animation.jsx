@@ -1,3 +1,5 @@
+import { Typewriter } from "react-simple-typewriter";
+
 export default function BouncingAvatar() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-black to-[#008080]/90">
@@ -59,18 +61,45 @@ export default function BouncingAvatar() {
         {/* Shadow */}
         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-40 h-5 bg-black/30 rounded-full blur-md shadow-pulse"></div>
 
-        <div className="mt-30"> 
-          <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap">
-           <span className="font-medium"> Hi there!</span> <br />
-          <span className="text-3xl font-bold"> I'm Developer<span className="font-medium">|</span> </span> <br />
-          <hr className="w-8 text-[#008080] border-2"/>
-            I Make The <span className="text-[#008080]">Complex</span>  Simple <br />
+        <div className="mt-30">
+          <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
+            
+            {/* Hi There */}
+            <span className="font-medium">Hi there!</span>
+            <br />
 
-            <button className="border p-3 bg-[#008080] border-[#008080] text-white font-medium mt-6">Contact Me</button>
+            {/*  Looping Words Added Here */}
+            <span className="text-3xl font-bold">
+              I'm{" "}
+              <span className="text-[#008080]">
+                <Typewriter
+                  words={[
+                    "Full Stack MERN Developer",
+                    "clean and fast code",
+                    "I believe unique ideas result in creative designs",
+                    "eager to solve real-world problems",
+                    "lets build something amazing together!",
+                  ]}
+                  loop
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={80}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                />
+              </span>
+            </span>
+
+            <br />
+            <hr className="w-8 mx-auto my-2 border-2 border-[#008080]" />
+
+            I Make The <span className="text-[#008080]">Complex</span> Simple
+            <br />
+
+            <button className="border p-3 bg-[#008080] border-[#008080] text-white font-medium mt-6">
+              Contact Me
+            </button>
           </p>
-
-          
-
         </div>
       </div>
     </div>
