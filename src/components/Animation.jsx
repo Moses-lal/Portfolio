@@ -49,7 +49,7 @@ export default function BouncingAvatar() {
 
       <div className="relative inset-0 mb-40">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[250px] h-[250px] bg-[#008080]/25 rounded-full blur-[90px] glow-effect"></div>
+          <div className="w-[250px] h-[250px] bg-[#008080]/50 rounded-full blur-[90px] glow-effect"></div>
         </div>
 
         <div className="relative bounce-avatar">
@@ -60,7 +60,7 @@ export default function BouncingAvatar() {
           />
         </div>
 
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-44 h-6 bg-[#008080]/70 rounded-full shadow-pulse"></div>
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-44 h-6 bg-black/40 rounded-full shadow-pulse"></div>
 
         <div className="mt-30">
           <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
