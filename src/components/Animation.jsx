@@ -66,11 +66,11 @@ export default function BouncingAvatar() {
             
             {/* Hi There */}
             <span className="font-medium">Hi there!</span>
-            <hr className="w-8 mx-auto my-2 border-2 border-[#008080]" />
+            <hr className="w-8 ml-30 border-2 border-[#008080]" />
           
 
             {/*Looping Words Added Here */}
-            <span className=" font-medium">
+            <span className="text-lg font-medium">
               I'm{" "}
               <span className="text-[#008080]">
                 <Typewriter
