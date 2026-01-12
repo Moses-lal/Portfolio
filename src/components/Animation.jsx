@@ -70,7 +70,7 @@ export default function BouncingAvatar() {
           
 
             {/*Looping Words Added Here */}
-            <span className="text-lg font-medium">
+            <span className="text-xl font-medium">
               I'm{" "}
               <span className="text-[#008080]">
                 <Typewriter
