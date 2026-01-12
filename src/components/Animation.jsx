@@ -68,13 +68,15 @@ export default function BouncingAvatar() {
             <span className="font-medium">Hi there!</span>
            <br />
 
+
+
             {/*Looping Words Added Here */}
             <span className="text-xl font-bold">
               <span className="text-[#008080]">
                 <Typewriter
                   words={[
-                    "Full Stack MERN Developer",
-                    "clean and fast code",
+                    "want MERN Developer",
+                    "with clean and fast code",
                     "unique ideas with creative design",
                     "Practical problem solver",
                     "lets build something together!",
@@ -92,7 +94,7 @@ export default function BouncingAvatar() {
             <br />
            
             <hr className="w-6 mx-auto border-2 border-[#008080]" />
-
+            <br />
 
             I Make The <span className="text-[#008080]">Complex</span> Simple
             <br />
