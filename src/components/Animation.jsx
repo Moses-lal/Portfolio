@@ -73,7 +73,7 @@ export default function BouncingAvatar() {
           />
         </div>
 
-        <div className="absolute -bottom-1 left-1/2 w-44 h-6 bg-black/50 rounded-full shadow-pulse"></div>
+        <div className="absolute  left-1/2 w-44 h-6 bg-black/50 rounded-full shadow-pulse"></div>
 
         <div className="mt-30">
           <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
