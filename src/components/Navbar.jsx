@@ -24,6 +24,7 @@ const Navbar = () => {
       <Link to={"/"} className={`${isActive("/")}`} >Home</Link>
       <Link to={"/about"} className={`${isActive("/about")}`}>About</Link>
       <Link to={"/project"} className={`${isActive("/project")}`} >Projects</Link>
+      <Link to={"/education"} className={`${isActive("/education")}`}>skills</Link>
       <Link to={"/contact"} className={`${isActive("/contact")}`}>Contact Me</Link>
       <Link to={"/education"} className={`${isActive("/education")}`}>Academics</Link>
     </div>
