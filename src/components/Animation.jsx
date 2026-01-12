@@ -69,7 +69,7 @@ export default function BouncingAvatar() {
             <br />
 
             {/*  Looping Words Added Here */}
-            <span className="text-3xl font-bold">
+            <span className="text-md font-bold">
               I'm{" "}
               <span className="text-[#008080]">
                 <Typewriter
