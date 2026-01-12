@@ -18,17 +18,17 @@ export default function BouncingAvatar() {
 
         @keyframes shadow-sync {
           0% {
-            transform: translateX(-50%) scale(1);
+            transform: scale(1);
             opacity: 0.45;
             filter: blur(10px);
           }
           50% {
-            transform: translateX(-50%) scale(0.65);
+            transform: scale(0.65);
             opacity: 0.15;
             filter: blur(18px);
           }
           100% {
-            transform: translateX(-50%) scale(1);
+            transform: scale(1);
             opacity: 0.45;
             filter: blur(10px);
           }
@@ -60,23 +60,25 @@ export default function BouncingAvatar() {
         }
       `}</style>
 
-      <div className="relative inset-0 mb-40">
+      <div className="relative inset-0 mb-40 flex flex-col items-center">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[250px] h-[250px] bg-[#008080]/50 rounded-full blur-[90px] glow-effect"></div>
         </div>
 
-        <div className="relative bounce-avatar">
-          <img
-            src="./photo4.jpg"
-            alt="Avatar"
-            className="w-48 h-48 rounded-full border-3 border-[#008080] object-cover"
-          />
+        <div className="relative flex flex-col items-center">
+          <div className="bounce-avatar">
+            <img
+              src="./photo4.jpg"
+              alt="Avatar"
+              className="w-48 h-48 rounded-full border-3 border-[#008080] object-cover"
+            />
+          </div>
+
+          <div className="mt-2 w-44 h-6 bg-black/50 rounded-full shadow-pulse"></div>
         </div>
 
-        <div className="absolute  left-1/2 w-44 h-6 bg-black/50 rounded-full shadow-pulse"></div>
-
-        <div className="mt-30">
-          <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
+        <div className="mt-24">
+          <p className="text-white font-bold text-lg whitespace-nowrap text-center">
             <span className="font-medium">Hi there!</span>
             <br />
             <span className="text-xl font-bold text-[#008080]">
