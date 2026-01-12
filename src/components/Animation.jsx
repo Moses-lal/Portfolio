@@ -13,15 +13,17 @@ export default function BouncingAvatar() {
             transform: translateY(-30px);
           }
         }
-        @keyframes shadow-dim {
+        @keyframes shadow-sync {
           0%,
           100% {
-            opacity: 0.6;
+            opacity: 0.45;
             transform: scale(1);
+            filter: blur(10px);
           }
           50% {
-            opacity: 0.2;
-            transform: scale(0.8);
+            opacity: 0.15;
+            transform: scale(0.7);
+            filter: blur(18px);
           }
         }
         @keyframes glow {
@@ -37,7 +39,8 @@ export default function BouncingAvatar() {
           animation: bounce-smooth 3s ease-in-out infinite;
         }
         .shadow-pulse {
-          animation: shadow-dim 2s ease-in-out infinite;
+          animation: shadow-sync 3s ease-in-out infinite;
+          transform-origin: center;
         }
         .glow-effect {
           animation: glow 3s ease-in-out infinite;
@@ -49,7 +52,6 @@ export default function BouncingAvatar() {
           <div className="w-[250px] h-[250px] bg-[#008080]/25 rounded-full blur-[90px] glow-effect"></div>
         </div>
 
-        {/* Avatar with Bounce */}
         <div className="relative bounce-avatar">
           <img
             src="./photo4.jpg"
@@ -58,19 +60,12 @@ export default function BouncingAvatar() {
           />
         </div>
 
-        {/* Shadow */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-40 h-5 bg-black/30 rounded-full blur-md shadow-pulse"></div>
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-44 h-6 bg-black/40 rounded-full shadow-pulse"></div>
 
         <div className="mt-30">
           <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
-            
-            {/* Hi There */}
             <span className="font-medium">Hi there!</span>
-           <br />
-
-
-
-            {/*Looping Words Added Here */}
+            <br />
             <span className="text-xl font-bold">
               <span className="text-[#008080]">
                 <Typewriter
@@ -90,15 +85,10 @@ export default function BouncingAvatar() {
                 />
               </span>
             </span>
-
             <br />
-           
             <hr className="w-6 mx-auto border-2 border-[#008080] mb-2" />
-
-
             I Make The <span className="text-[#008080]">Complex</span> Simple
             <br />
-
             <button className="border p-3 bg-[#008080] border-[#008080] text-white font-medium mt-6">
               Contact Me
             </button>
