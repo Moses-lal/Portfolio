@@ -5,27 +5,35 @@ export default function BouncingAvatar() {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-black to-[#008080]/90">
       <style jsx>{`
         @keyframes bounce-smooth {
-          0%,
-          100% {
+          0% {
             transform: translateY(0);
           }
           50% {
             transform: translateY(-30px);
           }
-        }
-        @keyframes shadow-sync {
-          0%,
           100% {
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes shadow-sync {
+          0% {
+            transform: translateX(-50%) scale(1);
             opacity: 0.45;
-            transform: scale(1);
             filter: blur(10px);
           }
           50% {
+            transform: translateX(-50%) scale(0.65);
             opacity: 0.15;
-            transform: scale(0.7);
             filter: blur(18px);
           }
+          100% {
+            transform: translateX(-50%) scale(1);
+            opacity: 0.45;
+            filter: blur(10px);
+          }
         }
+
         @keyframes glow {
           0%,
           100% {
@@ -35,13 +43,18 @@ export default function BouncingAvatar() {
             opacity: 1;
           }
         }
+
         .bounce-avatar {
-          animation: bounce-smooth 3s ease-in-out infinite;
+          animation: bounce-smooth 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform;
         }
+
         .shadow-pulse {
-          animation: shadow-sync 3s ease-in-out infinite;
+          animation: shadow-sync 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
           transform-origin: center;
+          will-change: transform, opacity, filter;
         }
+
         .glow-effect {
           animation: glow 3s ease-in-out infinite;
         }
@@ -60,30 +73,28 @@ export default function BouncingAvatar() {
           />
         </div>
 
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-44 h-6 bg-black/40 rounded-full shadow-pulse"></div>
+        <div className="absolute -bottom-10 left-1/2 w-44 h-6 bg-black/50 rounded-full shadow-pulse"></div>
 
         <div className="mt-30">
           <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white font-bold text-lg whitespace-nowrap text-center">
             <span className="font-medium">Hi there!</span>
             <br />
-            <span className="text-xl font-bold">
-              <span className="text-[#008080]">
-                <Typewriter
-                  words={[
-                    "I'm MERN Developer",
-                    "with clean and fast code",
-                    "unique ideas with creative design",
-                    "Practical problem solver",
-                    "lets build something together!",
-                  ]}
-                  loop
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={80}
-                  deleteSpeed={50}
-                  delaySpeed={1500}
-                />
-              </span>
+            <span className="text-xl font-bold text-[#008080]">
+              <Typewriter
+                words={[
+                  "I'm MERN Developer",
+                  "with clean and fast code",
+                  "unique ideas with creative design",
+                  "Practical problem solver",
+                  "lets build something together!",
+                ]}
+                loop
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
             </span>
             <br />
             <hr className="w-6 mx-auto border-2 border-[#008080] mb-2" />
