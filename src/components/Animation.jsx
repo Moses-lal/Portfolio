@@ -75,7 +75,7 @@ export default function BouncingAvatar() {
               <span className="text-[#008080]">
                 <Typewriter
                   words={[
-                    "want MERN Developer",
+                    "I'm MERN Developer",
                     "with clean and fast code",
                     "unique ideas with creative design",
                     "Practical problem solver",
@@ -94,7 +94,7 @@ export default function BouncingAvatar() {
             <br />
            
             <hr className="w-6 mx-auto border-2 border-[#008080]" />
-            <br />
+
 
             I Make The <span className="text-[#008080]">Complex</span> Simple
             <br />
