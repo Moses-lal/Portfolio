@@ -6,17 +6,24 @@ import { IoLocationSharp } from "react-icons/io5";
 import { RiSuitcaseFill } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { motion } from "framer-motion";
+import resume from "../assets/Moseslal_CV.pdf";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Home = () => {
+
+
+  const navigate = useNavigate();
+
   return (
     <>
 
      <div class="min-h-screen bg-black flex items-center
 bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,128,128,0.22)_70%,rgba(0,0,0,1)_100%)]">
 
-   <div className="flex mx-60   ">
+   <div className=" mx-60   ">
 
     <div className="space-y-2">
    <h2 className="text-white text-5xl font-bold"> Hi , I'm Moses <span className="text-[#008080]">Lal</span> </h2>
@@ -26,20 +33,44 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
     <br/> "Evolving from beginner to builder — one project, one bug, <br /> one <span className="text-[#008080]">breakthrough</span> at a time."  </p>
    </div>
 
-   <div className="flex items-center text-white gap-5 mt-8 ">
-    <div className="flex items-center">
-    <IoLocationSharp className="text-[#008080]"/> <span className="text-sm mx-1 font-bold">Bhopal</span> 
-    </div>
+<div className="flex gap-4 mt-8">
+   <div className="flex items-center">
+  <motion.div
+    animate={{ y: [0, -8, 0] }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 0.3, 
+    }}
+  >
+    <IoLocationSharp className="text-[#008080]" />
+  </motion.div>
+  <span className="text-sm mx-1 font-bold text-white">Bhopal</span>
+</div>
 
-    <div className="flex items-center">
-    <RiSuitcaseFill className="text-[#008080]"/> <span className="text-md mx-1 font-medium">Available Now</span>
-    </div>
-   </div>
+
+<div className="flex items-center">
+  <motion.div
+    animate={{ y: [0, -8, 0] }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 0.3, 
+    }}
+  >
+    <RiSuitcaseFill className="text-[#008080]" />
+  </motion.div>
+  <span className="text-md mx-1 font-medium text-white">Available Now</span>
+</div>
+
+</div>
 
 
    <div className=" mt-8 flex  gap-5">
-    <button className="border rounded-xl p-3 flex items-center gap-1 text-[#008080] hover:bg-[#008080]/90 hover:text-black hover:border-black"> <FaLongArrowAltRight />Hire Me </button>
-    <button className="border rounded-xl p-3 flex items-center gap-1 bg-[#008080] border-[#008080] text-black"><MdOutlineFileDownload />Resume</button>
+    <button className="border rounded-xl p-3 flex items-center gap-1 text-[#008080] hover:bg-[#008080]/90 hover:text-black hover:border-black" onClick={() => navigate("/contact")}> <FaLongArrowAltRight />Hire Me </button>
+    <button className="border rounded-xl p-3 flex items-center gap-1 bg-[#008080] border-[#008080] text-black"  onClick={() => window.open(resume, "_blank")}><MdOutlineFileDownload />Resume</button>
    </div>
 
    <hr className="text-[#008080] mt-8"/>

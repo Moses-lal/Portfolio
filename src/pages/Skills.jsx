@@ -1,7 +1,13 @@
-import React from 'react'
+import SkillsCards from "../components/SkillsCards"
 
-export const Skills = () => {
+export default function Home() {
   return (
-    <div>Skills</div>
-  )
+    <>
+    <div>
+      <SkillsCards />
+    </div>
+    
+    </>
+   
+  );
 }

@@ -1,6 +1,9 @@
 import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
 
 export default function BouncingAvatar() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-black to-[#008080]/90">
       <style jsx>{`
@@ -100,7 +103,7 @@ export default function BouncingAvatar() {
             <hr className="w-6 mx-auto border-2 border-[#008080] mb-2" />
             I Make The <span className="text-[#008080]">Complex</span> Simple
             <br />
-            <button className="border p-3 bg-[#008080] border-[#008080] text-white font-medium mt-6">
+            <button className="border p-3 bg-[#008080] border-[#008080] text-white font-medium mt-6" onClick={()=>navigate("/contact")}>
               Contact Me
             </button>
           </p>
