@@ -5,8 +5,43 @@ import { RxGithubLogo } from "react-icons/rx";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+
+
 
 const Contact = () => {
+
+  const fromref = React.useRef();
+  const [issending, setIsSending] = useState(false);
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+
+    setIsSending(true);
+
+   emailjs.sendForm(
+    import.meta.env.VITE_EMIALJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    fromref.current, 
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+   ).then(
+    () => {
+      alert("Message sent successfully!");
+      fromref.current.reset();
+      setIsSending(false);
+    },
+    (error) => {
+      alert("Failed to send message. Please try again later.");
+      console.error("EmailJS Error:", error);
+      setIsSending(false);
+    }
+   )
+
+  }
+
   return (
     <>
 
@@ -46,17 +81,17 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
         </ul>
       </div>
 
-      <div className=' w-full p-5'>
+      <form className=' w-full p-5' ref={fromref} onSubmit={sendEmail}>
 
         <div className='flex gap-10 '>
         <div>
           <label htmlFor="name" className='text-sm font-bold'>Full Name</label>
-          <input type="text" className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='Employee' />
+          <input type="text" name="from_name" className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='Employee' required/>
         </div>
 
         <div>
           <label htmlFor="name" className='text-sm font-bold'>Company Name</label>
-          <input type="text" className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='Company' />
+          <input type="text" name='company_name' className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='Company' />
         </div>
 
         </div>
@@ -64,13 +99,13 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
        <div className='flex gap-10 mt-10'>
 
         <div>
-          <label htmlFor="name" className='text-sm font-bold'>Email</label>
-          <input type="email" className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='user@gmail.com' />
+          <label htmlFor="emial" className='text-sm font-bold'>Email</label>
+          <input type="email" name='email' className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='user@gmail.com' required />
         </div>
 
         <div>
           <label htmlFor="name" className='text-sm font-bold'>Phone Number</label>
-          <input type="phone" className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='+91' />
+          <input type="phone" name='phone' className='border-b-2 p-2 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='+91' required />
         </div>
 
        </div>
@@ -83,23 +118,23 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
         <div className='flex gap-3 ml-10 mt-2'>
 
         <div className='flex gap-1'>
-          <input type="radio" className='border' />
-          <label htmlFor="">Internship</label>
+        <input type="radio" name="subject" value="Internship" required />
+        <label>Internship</label>
         </div>
-       
-       <div className='flex gap-1'>
-        <input type="radio" className='border' />
-        <label htmlFor="">Full-Time Job</label>
-       </div>
-       
-       <div className='flex gap-1'>
-        <input type="radio" className='border' />
-        <label >FreeLance</label>
-       </div>
-        
+
         <div className='flex gap-1'>
-        <input type="radio" className='border' />
-        <label htmlFor="">Other</label>
+        <input type="radio" name="subject" value="Full-Time Job" />
+        <label>Full-Time Job</label>
+        </div>
+
+        <div className='flex gap-1'>
+        <input type="radio" name="subject" value="Freelance" />
+        <label>Freelance</label>
+        </div>
+
+        <div className='flex gap-1'>
+        <input type="radio" name="subject" value="Other" />
+        <label>Other</label>
         </div>
        
         </div>
@@ -109,16 +144,16 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
 
 
   <div className='grid mt-10 space-y-1'>
-    <label htmlFor="tex" className='text-sm font-bold'>Message</label>
-    <textarea name="tex" id="tex" className='border-b-2 p-1 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='write your answer'></textarea>
+    <label htmlFor="message" className='text-sm font-bold'>Message</label>
+    <textarea name="message" id="message" className='border-b-2 p-1 border-white focus:outline-none focus:border-[#008080] font-bold placeholder:font-medium placeholder:text-sm' placeholder='write your answer' required></textarea>
   </div>
 
 
 <div className='flex justify-end mt-5'> 
-  <button className='flex justify-end p-2 border-2 border-[#008080] text-white'>Send Button</button>
+  <button type='submit'  disabled={issending}    className='flex justify-end p-2 border-2 border-[#008080] text-white'>{ issending ? "Sending..." : "Send Message"}</button>
 </div>
 
-      </div>
+      </form>
 
     </div>
 

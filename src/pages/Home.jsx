@@ -76,9 +76,11 @@ bg-[radial-gradient(circle_at_center,rgba(0,0,0,1)_0%,rgba(0,0,0,1)_45%,rgba(0,1
    <hr className="text-[#008080] mt-8"/>
 
    <div className="text-white flex gap-5 mt-8">
-   <span className="text-md ">Follow Me : </span> 
+   <span className="text-md">Follow Me : </span> 
    <div className="flex gap-5 items-center text-xl">
-    <a href=""><FaInstagram /></a> <a href="https://github.com/Moses-lal"><RxGithubLogo /></a>  <a href="https://www.linkedin.com/in/moses-lal-6a2196348/"><FaLinkedin /></a>
+    <a className="hover:text-[#008080]" href=""><FaInstagram /></a> 
+    <a className="hover:text-[#008080]" href="https://github.com/Moses-lal"><RxGithubLogo /></a> 
+     <a className="hover:text-[#008080]" href="https://www.linkedin.com/in/moses-lal-6a2196348/"><FaLinkedin /></a>
    </div>
     
    </div>

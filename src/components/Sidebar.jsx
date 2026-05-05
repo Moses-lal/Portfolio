@@ -10,7 +10,7 @@ const Sidebar = () => {
   
   <>
 
-     <div class="bg-gradient-to-br from-black via-black to-[#008080]/90 border w-3/14">
+     <div className="bg-gradient-to-br from-black via-black to-[#008080]/90 border w-3/14">
      
      <div>
      <Animate/>
