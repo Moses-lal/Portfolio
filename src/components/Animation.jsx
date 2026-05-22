@@ -1,8 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
-import { useNavigate } from "react-router-dom";
 
 export default function BouncingAvatar() {
-  const navigate = useNavigate();
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-black to-[#008080]/90">
