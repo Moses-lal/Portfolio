@@ -7,6 +7,7 @@ import Education from "./pages/Education";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import Skills from "./pages/Skills";
+import DesktopOnly from "./components/DesktopOnly";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -32,6 +33,7 @@ const App = () => {
 
   return (
     <>
+    <DesktopOnly>
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex ">
         <Sidebar />
@@ -39,6 +41,7 @@ const App = () => {
           {renderPage()}
         </section>
       </main>
+      </DesktopOnly>
     </>
   );
 };
